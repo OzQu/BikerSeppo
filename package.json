@@ -1,0 +1,28 @@
+{
+  "name": "bikerseppo",
+  "version": "0.0.1",
+  "description": "Serverless Strava - Slack integration. Fetches daily all activities of Strava club and sends compilation to Slack.",
+  "main": "collector.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OzQu/BikerSeppo.git"
+  },
+  "keywords": [
+    "serverless",
+    "bot",
+    "slack",
+    "strava"
+  ],
+  "author": "Oskari Ruutiainen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OzQu/BikerSeppo/issues"
+  },
+  "homepage": "https://github.com/OzQu/BikerSeppo#readme",
+  "dependencies": {
+    "strava-v3": "^1.14.0"
+  }
+}
