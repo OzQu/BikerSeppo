@@ -1,0 +1,33 @@
+service: biker-seppo
+
+custom:
+  region: eu-west-1
+
+provider:
+  name: aws
+  profile: ${env:BIKER_PROFILE}
+  runtime: nodejs6.10
+  region: ${self:custom.region}
+  memory: 128
+
+package:
+  include:
+    - node_modules/**
+    - collector.js
+  exclude:
+    - ./**
+
+functions:
+
+  TopThree:
+    handler: collector.handler
+    environment:
+      STRAVA_ACCESS_TOKEN: ${env:STRAVA_ACCESS_TOKEN}
+      STRAVA_CLUB_ID: ${env:STRAVA_CLUB_ID}
+      BIKER_SLACK_WEBHOOK: ${env:BIKER_SLACK_WEBHOOK}
+      BIKER_SLACK_CHANNEL: ${env:BIKER_SLACK_CHANNEL}
+      BIKER_BOTNAME: ${env:BIKER_BOTNAME}
+
+    events:
+      - schedule: cron(0 23 * * ? *)
+

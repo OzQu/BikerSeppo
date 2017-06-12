@@ -23,6 +23,9 @@
   },
   "homepage": "https://github.com/OzQu/BikerSeppo#readme",
   "dependencies": {
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "slack-node": "^0.1.8",
     "strava-v3": "^1.14.0"
   }
 }
